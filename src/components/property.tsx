@@ -8,6 +8,7 @@ import millify from 'millify'
 import DefaultImage from '@/assets/images/house.jpg'
 
 export interface IProperty {
+    id: string
     externalID: string
     coverPhoto: {
         url: string
