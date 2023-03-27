@@ -25,10 +25,16 @@ export interface IProperty {
     rooms: number,
     baths: number
     area: number
+    furnishingStatus: string, 
+    photos: any[], 
+    type: string, 
+    amenities: any[], 
+    description: string, 
+    purpose: string,
 }
 
 export const Property = ({  externalID, coverPhoto, title, isVerified, rentFrequency, price, agency, area, baths, rooms } : IProperty) => (
-    <Link href={`/property/${externalID}`} onClick={(e) => e.preventDefault()}>
+    <Link href={`/property/${externalID}`} passHref>
         <Flex flexWrap='wrap' w='420px' p='5' paddingTop='0' justifyContent='flex-start' cursor='pointer'>
             <Box>
                 <Image src={coverPhoto ? coverPhoto.url : DefaultImage} width={400} height={260} alt='house' />
